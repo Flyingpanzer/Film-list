@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.centerAlign {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.ml-1 {
+  margin-left: 2rem;
+}
+
+.table-row {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.table-row:hover {
+  background-color: rgb(194, 194, 194);
+}
