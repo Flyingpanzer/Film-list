@@ -81,6 +81,13 @@ export const addNewFilmRequestFailed = error => {
   };
 };
 
+export const displayFilmById = filmId => {
+  return {
+    type: "DISPLAY_FILM_BY_ID",
+    filmId
+  };
+};
+
 export const showDeleteModal = filmToDelete => {
   return {
     type: "SHOW_DELETE_MODAL",

@@ -1,5 +1,6 @@
 export const INITIAL_STATE = {
   films: [],
+  film: null,
   isFetching: false,
   error: null,
   errorUpload: null,
@@ -16,6 +17,7 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
       return {
         ...currentState,
         films: [],
+        film: null,
         isFetching: true,
         error: null,
         successMsg: null,
@@ -27,6 +29,7 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
       return {
         ...currentState,
         films: action.films,
+        film: null,
         isFetching: false,
         error: null,
         successMsg: action.message,
@@ -113,6 +116,15 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
         successMsg: null,
         showDeleteModal: true,
         filmToDelete: action.filmToDelete
+      };
+
+    case "DISPLAY_FILM_BY_ID":
+      const filmDetails = currentState.films.find(
+        film => film._id === action.filmId
+      );
+      return {
+        ...currentState,
+        film: filmDetails
       };
 
     case "SHOW_DELETE_MODAL":

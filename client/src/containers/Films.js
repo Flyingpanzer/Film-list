@@ -4,6 +4,7 @@ import Films from "../components/Films";
 import {
   fetchFilms,
   showDeleteModal,
+  displayFilmById,
   deleteFilm,
   hideDeleteModal
 } from "../actions/filmActions";
@@ -20,6 +21,7 @@ const mapStateToProps = ({ filmState }) => ({
 export default connect(mapStateToProps, {
   fetchFilms,
   hideDeleteModal,
+  displayFilmById: filmId => displayFilmById(filmId),
   deleteFilm: filmToDelete => deleteFilm(filmToDelete),
   showDeleteModal: filmToDelete => showDeleteModal(filmToDelete)
 })(Films);
