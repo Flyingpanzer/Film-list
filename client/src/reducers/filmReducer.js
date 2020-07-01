@@ -148,6 +148,25 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
         filmToDelete: null
       };
 
+    case "SORT_FILMS":
+      const sortedFilms = currentState.films.slice();
+
+      sortedFilms.sort((a, b) => {
+        var nameA = a[action.filter].toUpperCase();
+        var nameB = b[action.filter].toUpperCase();
+        if (nameA < nameB) {
+          return -1;
+        } else if (nameA > nameB) {
+          return 1;
+        }
+
+        return 0;
+      });
+      return {
+        ...currentState,
+        films: sortedFilms
+      };
+
     default:
       return currentState;
   }

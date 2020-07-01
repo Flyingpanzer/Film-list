@@ -141,3 +141,10 @@ export const deleteFilmFailed = error => {
     error
   };
 };
+
+export const sortFilm = filter => {
+  return {
+    type: "SORT_FILMS",
+    filter
+  };
+};

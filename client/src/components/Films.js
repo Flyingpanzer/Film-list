@@ -2,6 +2,7 @@ import React, { useEffect, Fragment } from "react";
 import { Alert, Glyphicon, Button, Modal } from "react-bootstrap";
 import "./App.css";
 
+import ToolBar from "../containers/ToolBar";
 import FilmDetails from "../containers/FilmDetails";
 
 const Films = ({
@@ -28,6 +29,8 @@ const Films = ({
   return (
     <Fragment>
       <div className="container ">
+        <ToolBar />
+
         <div className="row">
           <div className="col-md-3">
             <h3 className="centerAlign">List of films:</h3>
