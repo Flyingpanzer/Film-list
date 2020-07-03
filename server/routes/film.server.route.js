@@ -13,5 +13,6 @@ router
   .get(getFilms)
   .post(addFilm);
 router.route("/:id").delete(deleteFilm);
+router.route("/search").post(searchFilmByType);
 
 export default router;

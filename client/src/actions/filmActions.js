@@ -88,6 +88,40 @@ export const displayFilmById = filmId => {
   };
 };
 
+export const searchFilm = searchData => {
+  return dispatch => {
+    return fetch(apiUrl + searchUrl, {
+      method: "post",
+      body: searchData
+    }).then(response => {
+      if (response.ok) {
+        response.json().then(data => {
+          dispatch(searchFilmRequestSuccess(data.film, data.message));
+        });
+      } else {
+        response.json().then(error => {
+          dispatch(searchFilmRequestFailed(error));
+        });
+      }
+    });
+  };
+};
+
+export const searchFilmRequestSuccess = (film, message) => {
+  return {
+    type: "SEARCH_FILM_REQUEST_SUCCESS",
+    film: film,
+    message: message
+  };
+};
+
+export const searchFilmRequestFailed = error => {
+  return {
+    type: "SEARCH_FILM_REQUEST_FAILED",
+    error
+  };
+};
+
 export const showDeleteModal = filmToDelete => {
   return {
     type: "SHOW_DELETE_MODAL",

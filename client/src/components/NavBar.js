@@ -14,6 +14,11 @@ const NavBar = () => (
           Add film
         </Link>
       </li>
+      <li>
+        <Link to={"/searchFilm"} className="nav-link">
+          Search film
+        </Link>
+      </li>
     </ul>
   </nav>
 );

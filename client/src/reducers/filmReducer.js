@@ -1,5 +1,6 @@
 export const INITIAL_STATE = {
   films: [],
+  searchedFilms: [],
   film: null,
   isFetching: false,
   error: null,
@@ -91,6 +92,41 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
         successMsg: null,
         showDeleteModal: true,
         filmToDelete: action.filmToDelete
+      };
+
+    case "SEARCH_FILM_REQUEST":
+      return {
+        ...currentState,
+        films: currentState.films,
+        searchedFilms: [],
+        film: null,
+        isFetching: true,
+        error: null,
+        successMsg: null,
+        showDeleteModal: false,
+        filmToDelete: null
+      };
+
+    case "SEARCH_FILM_REQUEST_SUCCESS":
+      return {
+        ...currentState,
+        searchedFilms: action.film,
+        isFetching: false,
+        successMsg: action.message,
+        showDeleteModal: false
+      };
+
+    case "SEARCH_FILM_REQUEST_FAILED":
+      return {
+        ...currentState,
+        films: currentState.films,
+        searchedFilms: [],
+        film: null,
+        isFetching: true,
+        error: action.error,
+        successMsg: null,
+        showDeleteModal: false,
+        filmToDelete: null
       };
 
     case "DELETE_FILM_SUCCESS":

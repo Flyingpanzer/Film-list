@@ -36,6 +36,35 @@ export const addFilm = (req, res) => {
   });
 };
 
+export const searchFilmByType = (req, res) => {
+  const { searchInput, inputType } = req.body;
+  if (inputType === "title") {
+    Film.find({ filmTitle: searchInput }, (err, film) => {
+      if (err) {
+        return res.json({ success: false, message: "Some Error" });
+      }
+
+      return res.json({
+        success: true,
+        message: "Film fetched by title successfully",
+        film
+      });
+    });
+  } else if (inputType === "actor") {
+    Film.find({ filmStars: searchInput }, (err, film) => {
+      if (err) {
+        return res.json({ success: false, message: "Some Error" });
+      }
+
+      return res.json({
+        success: true,
+        message: "Film fetched by actor successfully",
+        film
+      });
+    });
+  }
+};
+
 export const deleteFilm = (req, res) => {
   Film.findByIdAndRemove(req.params.id, (err, film) => {
     if (err) {
