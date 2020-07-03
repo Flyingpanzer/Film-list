@@ -1,11 +1,8 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import SearchFilm from '../components/SearchFilm';
-import { searchFilm } from '../actions/filmActions';
+import SearchFilm from "../components/SearchFilm";
+import { searchFilm } from "../actions/filmActions";
 
-export default connect(
-  null,
-  {
-    searchFilm: (searchInput, inputType) => searchFilm(searchInput, inputType),
-  },
-)(SearchFilm);
+export default connect(null, {
+  searchFilm: (searchInput, inputType) => searchFilm(searchInput, inputType)
+})(SearchFilm);

@@ -1,11 +1,8 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import { sortFilm } from '../actions/filmActions';
-import ToolBar from '../components/ToolBar';
+import { sortFilm } from "../actions/filmActions";
+import ToolBar from "../components/ToolBar";
 
-export default connect(
-  null,
-  {
-    sortFilm: filter => sortFilm(filter),
-  },
-)(ToolBar);
+export default connect(null, {
+  sortFilm: filter => sortFilm(filter)
+})(ToolBar);

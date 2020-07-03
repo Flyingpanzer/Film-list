@@ -2,8 +2,8 @@ import React, { useEffect, Fragment } from "react";
 import { Alert, Glyphicon, Button, Modal } from "react-bootstrap";
 import "./App.css";
 
-import ToolBar from "../containers/ToolBar";
 import FilmDetails from "../containers/FilmDetails";
+import ToolBar from "../containers/ToolBar";
 
 const Films = ({
   fetchFilms,
@@ -70,6 +70,7 @@ const Films = ({
               </table>
             )}
           </div>
+
           <FilmDetails />
         </div>
       </div>

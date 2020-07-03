@@ -11,6 +11,7 @@ const AppRouter = () => {
       <NavBar />
       <Switch>
         <Route path="/addFilm" component={AddFilm} />
+        <Route path="/addFile" component={AddFile} />
         <Route path="/searchFilm" component={SearchFilm} />
         <Route path="/" component={Films} />
       </Switch>

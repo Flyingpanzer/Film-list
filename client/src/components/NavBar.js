@@ -15,6 +15,11 @@ const NavBar = () => (
         </Link>
       </li>
       <li>
+        <Link to={"/addFile"} className="nav-link">
+          Add file
+        </Link>
+      </li>
+      <li>
         <Link to={"/searchFilm"} className="nav-link">
           Search film
         </Link>

@@ -1,4 +1,6 @@
 const apiUrl = "/api/";
+const searchUrl = "search";
+const uploadUrl = "upload";
 
 export const fetchFilms = () => {
   return dispatch => {
@@ -78,6 +80,51 @@ export const addNewFilmRequestFailed = error => {
   return {
     type: "ADD_NEW_FILM_REQUEST_FAILED",
     error
+  };
+};
+
+export const addFile = file => {
+  return dispatch => {
+    return fetch(apiUrl + uploadUrl, {
+      method: "post",
+      body: file
+    }).then(response => {
+      if (response.ok) {
+        response.json().then(data => {
+          dispatch(addFileRequestSuccess(data.message));
+        });
+      } else {
+        response.json().then(error => {
+          dispatch(addFileRequestFailed(error));
+        });
+      }
+    });
+  };
+};
+
+export const addFileRequestSuccess = message => {
+  return {
+    type: "ADD_FILE_REQUEST_SUCCESS",
+    message
+  };
+};
+
+export const addFileRequestFailed = error => {
+  return {
+    type: "ADD_FILE_REQUEST_FAILED",
+    error
+  };
+};
+
+export const showUploadModal = () => {
+  return {
+    type: "SHOW_UPLOAD_MODAL"
+  };
+};
+
+export const hideUploadModal = () => {
+  return {
+    type: "HIDE_UPLOAD_MODAL"
   };
 };
 

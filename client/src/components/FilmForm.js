@@ -1,17 +1,17 @@
-import React from 'react';
-import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import React from "react";
+import { FormGroup, ControlLabel, FormControl, Button } from "react-bootstrap";
 
 const FilmForm = ({ addFilm, inputFields, setInputFields }) => {
   const onChange = e => {
     e.preventDefault();
 
     const {
-      target: { name, value },
+      target: { name, value }
     } = e;
 
     setInputFields({
       ...inputFields,
-      [name]: value,
+      [name]: value
     });
   };
 

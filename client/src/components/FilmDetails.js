@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
 const FilmDetails = ({ film }) => {
   return (
@@ -21,7 +21,7 @@ const FilmDetails = ({ film }) => {
                   <td>{film.filmTitle}</td>
                   <td>{film.filmYear}</td>
                   <td>{film.filmFormat}</td>
-                  <td>{film.filmStars.join(', ')}</td>
+                  <td>{film.filmStars.join(", ")}</td>
                 </tr>
               </tbody>
             </table>

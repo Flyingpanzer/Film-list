@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import React, { useState } from "react";
+import { FormGroup, ControlLabel, FormControl, Button } from "react-bootstrap";
 
 const SearchForm = ({ findFilm }) => {
-  const [searchInput, setSearchInput] = useState('');
+  const [searchInput, setSearchInput] = useState("");
   const onChange = e => {
     setSearchInput(e.target.value);
   };
@@ -35,7 +35,7 @@ const SearchForm = ({ findFilm }) => {
       <FormGroup>
         <Button
           type="submit"
-          onClick={e => onSubmit(e, 'title')}
+          onClick={e => onSubmit(e, "title")}
           bsStyle="success"
           bsSize="large"
           block
@@ -44,7 +44,7 @@ const SearchForm = ({ findFilm }) => {
         </Button>
         <Button
           type="submit"
-          onClick={e => onSubmit(e, 'actor')}
+          onClick={e => onSubmit(e, "actor")}
           bsStyle="success"
           bsSize="large"
           block

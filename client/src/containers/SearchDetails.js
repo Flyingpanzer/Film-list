@@ -1,12 +1,9 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import SearchDetails from '../components/SearchDetails';
+import SearchDetails from "../components/SearchDetails";
 
 const mapStateToProps = ({ filmState }) => ({
-  searchedFilms: filmState.searchedFilms,
+  searchedFilms: filmState.searchedFilms
 });
 
-export default connect(
-  mapStateToProps,
-  null,
-)(SearchDetails);
+export default connect(mapStateToProps, null)(SearchDetails);

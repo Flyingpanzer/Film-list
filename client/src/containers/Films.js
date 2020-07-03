@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import Films from "../components/Films";
 import {
   fetchFilms,
-  showDeleteModal,
   displayFilmById,
+  showDeleteModal,
   deleteFilm,
   hideDeleteModal
 } from "../actions/filmActions";

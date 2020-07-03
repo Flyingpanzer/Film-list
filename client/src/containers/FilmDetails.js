@@ -1,14 +1,11 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import FilmDetails from '../components/FilmDetails';
+import FilmDetails from "../components/FilmDetails";
 
 const mapStateToProps = ({ filmState }) => {
   return {
-    film: filmState.film,
+    film: filmState.film
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null,
-)(FilmDetails);
+export default connect(mapStateToProps, null)(FilmDetails);
