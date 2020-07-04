@@ -49,6 +49,6 @@ Steps:
 2.  npm start
 3.  Open browser at http://localhost:7000/
 
-## client
+## Testing
 
 run npm test in client directory
