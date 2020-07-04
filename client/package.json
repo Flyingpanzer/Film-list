@@ -4,6 +4,11 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "expect": "^24.9.0",
+    "fetch-mock": "^7.7.3",
+    "node-fetch": "^2.6.0",
     "react": "^16.11.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.11.0",
@@ -22,10 +27,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test ",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "react-test-renderer": "^16.11.0",
     "bootstrap": "^3.3.7"
   }
 }

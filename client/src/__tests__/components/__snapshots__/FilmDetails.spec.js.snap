@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchDetails component receive props and renders 1`] = `
+ReactWrapper {
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "getWrappingComponentRenderer": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+    "wrapInvoke": [Function],
+  },
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "filmDetails": Object {
+        "filmFormat": "VHS",
+        "filmStars": "Alexander Kaidanovsky",
+        "filmTitle": "Stalker",
+        "filmYear": "1979	",
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": <div
+        class="col-md-8"
+>
+        <div />
+</div>,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div />,
+        "className": "col-md-8",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": <div />,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            undefined,
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "filmDetails": Object {
+          "filmFormat": "VHS",
+          "filmStars": "Alexander Kaidanovsky",
+          "filmTitle": "Stalker",
+          "filmYear": "1979	",
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": <div
+          class="col-md-8"
+>
+          <div />
+</div>,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div />,
+          "className": "col-md-8",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": <div />,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": Array [
+              undefined,
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__linkedRoots__): Array [],
+  Symbol(enzyme.__unrendered__): <FilmDetails
+    filmDetails={
+        Object {
+            "filmFormat": "VHS",
+            "filmStars": "Alexander Kaidanovsky",
+            "filmTitle": "Stalker",
+            "filmYear": "1979	",
+          }
+    }
+/>,
+  Symbol(enzyme.__updatedBy__): null,
+}
+`;
