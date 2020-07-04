@@ -4,6 +4,8 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Films from "./containers/Films";
 import AddFilm from "./containers/AddFilm";
+import AddFile from "./containers/AddFile";
+import SearchFilm from "./containers/SearchFilm";
 
 const AppRouter = () => {
   return (

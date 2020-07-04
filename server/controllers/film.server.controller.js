@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
+import fs from "fs";
 
 import Film from "../models/film.server.model";
+import { parseFilmFile } from "./utils";
 
 export const getFilms = (req, res) => {
   Film.find().exec((err, films) => {
@@ -33,6 +35,30 @@ export const addFilm = (req, res) => {
       message: "Film added successfully",
       film
     });
+  });
+};
+
+export const addFile = (req, res) => {
+  var text = fs.readFileSync(req.files.file.file).toString("utf-8");
+
+  const parsedData = parseFilmFile(text.trim());
+
+  parsedData.forEach(film => {
+    const splitFilmStars = film.filmStars.split(",").map(el => el.trim());
+
+    const newFilmData = Object.assign({}, film, { filmStars: splitFilmStars });
+    const newFilm = new Film(newFilmData);
+    console.log(newFilm);
+    newFilm.save((err, film) => {
+      if (err) {
+        return res.json({ success: false, message: "Some Error" });
+      }
+    });
+  });
+
+  return res.json({
+    success: true,
+    message: "Film file has been added successfully"
   });
 };
 
