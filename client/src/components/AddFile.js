@@ -21,6 +21,7 @@ const AddFile = ({
       const formData = new FormData();
       formData.append('file', fileInput);
       addFile(formData);
+      showUploadModal();
     }
   };
 
@@ -41,13 +42,7 @@ const AddFile = ({
           </div>
         </div>
         <FormGroup>
-          <Button
-            type="submit"
-            bsStyle="success"
-            bsSize="large"
-            block
-            onClick={() => showUploadModal()}
-          >
+          <Button type="submit" bsStyle="success" bsSize="large" block>
             Submit
           </Button>
         </FormGroup>

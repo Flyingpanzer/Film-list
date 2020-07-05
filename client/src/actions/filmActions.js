@@ -17,12 +17,12 @@ import {
   DELETE_FILM_REQUEST,
   DELETE_FILM_SUCCESS,
   DELETE_FILM_FAILED,
-  SORT_FILMS
-} from "./actionType";
+  SORT_FILMS,
+} from './actionType';
 
-const apiUrl = "/api/";
-const searchUrl = "search";
-const uploadUrl = "upload";
+const apiUrl = '/api/';
+const searchUrl = 'search';
+const uploadUrl = 'upload';
 
 export const fetchFilms = () => {
   return dispatch => {
@@ -30,7 +30,6 @@ export const fetchFilms = () => {
     return fetch(apiUrl).then(response => {
       if (response.ok) {
         response.json().then(data => {
-          console.log(data);
           dispatch(fetchFilmsSuccess(data.films, data.message));
         });
       } else {
@@ -44,7 +43,7 @@ export const fetchFilms = () => {
 
 export const fetchFilmsRequest = () => {
   return {
-    type: FETCH_FILMS_REQUEST
+    type: FETCH_FILMS_REQUEST,
   };
 };
 
@@ -52,14 +51,14 @@ export const fetchFilmsSuccess = (films, message) => {
   return {
     type: FETCH_FILMS_SUCCESS,
     films: films,
-    message
+    message,
   };
 };
 
 export const fetchFilmsFailed = error => {
   return {
     type: FETCH_FILMS_FAILED,
-    error
+    error,
   };
 };
 
@@ -67,8 +66,8 @@ export const addNewFilm = film => {
   return dispatch => {
     dispatch(addNewFilmRequest(film));
     return fetch(apiUrl, {
-      method: "post",
-      body: film
+      method: 'post',
+      body: film,
     }).then(response => {
       if (response.ok) {
         response.json().then(data => {
@@ -86,7 +85,7 @@ export const addNewFilm = film => {
 export const addNewFilmRequest = film => {
   return {
     type: ADD_NEW_FILM_REQUEST,
-    film
+    film,
   };
 };
 
@@ -94,22 +93,22 @@ export const addNewFilmRequestSuccess = (film, message) => {
   return {
     type: ADD_NEW_FILM_SUCCESS,
     film,
-    message
+    message,
   };
 };
 
 export const addNewFilmRequestFailed = error => {
   return {
     type: ADD_NEW_FILM_FAILED,
-    error
+    error,
   };
 };
 
 export const addFile = file => {
   return dispatch => {
     return fetch(apiUrl + uploadUrl, {
-      method: "post",
-      body: file
+      method: 'post',
+      body: file,
     }).then(response => {
       if (response.ok) {
         response.json().then(data => {
@@ -127,41 +126,41 @@ export const addFile = file => {
 export const addFileRequestSuccess = message => {
   return {
     type: ADD_FILE_SUCCESS,
-    message
+    message,
   };
 };
 
 export const addFileRequestFailed = error => {
   return {
     type: ADD_FILE_FAILED,
-    error
+    error,
   };
 };
 
 export const showUploadModal = () => {
   return {
-    type: SHOW_UPLOAD_MODAL
+    type: SHOW_UPLOAD_MODAL,
   };
 };
 
 export const hideUploadModal = () => {
   return {
-    type: HIDE_UPLOAD_MODAL
+    type: HIDE_UPLOAD_MODAL,
   };
 };
 
 export const displayFilmById = filmId => {
   return {
     type: DISPLAY_FILM_BY_ID,
-    filmId
+    filmId,
   };
 };
 
 export const searchFilm = searchData => {
   return dispatch => {
     return fetch(apiUrl + searchUrl, {
-      method: "post",
-      body: searchData
+      method: 'post',
+      body: searchData,
     }).then(response => {
       if (response.ok) {
         response.json().then(data => {
@@ -180,27 +179,27 @@ export const searchFilmRequestSuccess = (film, message) => {
   return {
     type: SEARCH_FILM_SUCCESS,
     film: film,
-    message: message
+    message: message,
   };
 };
 
 export const searchFilmRequestFailed = error => {
   return {
     type: SEARCH_FILM_FAILED,
-    error
+    error,
   };
 };
 
 export const showDeleteModal = filmToDelete => {
   return {
     type: SHOW_DELETE_MODAL,
-    film: filmToDelete
+    film: filmToDelete,
   };
 };
 
 export const hideDeleteModal = () => {
   return {
-    type: HIDE_DELETE_MODAL
+    type: HIDE_DELETE_MODAL,
   };
 };
 
@@ -208,7 +207,7 @@ export const deleteFilm = filmToDelete => {
   return dispatch => {
     dispatch(deleteFilmRequest(filmToDelete));
     return fetch(apiUrl + filmToDelete._id, {
-      method: "delete"
+      method: 'delete',
     }).then(response => {
       if (response.ok) {
         response.json().then(data => {
@@ -226,7 +225,7 @@ export const deleteFilm = filmToDelete => {
 export const deleteFilmRequest = filmToDelete => {
   return {
     type: DELETE_FILM_REQUEST,
-    filmToDelete
+    filmToDelete,
   };
 };
 
@@ -234,20 +233,20 @@ export const deleteFilmSuccess = (filmToDelete, message) => {
   return {
     type: DELETE_FILM_SUCCESS,
     filmToDelete: filmToDelete,
-    message
+    message,
   };
 };
 
 export const deleteFilmFailed = error => {
   return {
     type: DELETE_FILM_FAILED,
-    error
+    error,
   };
 };
 
 export const sortFilm = filter => {
   return {
     type: SORT_FILMS,
-    filter
+    filter,
   };
 };
