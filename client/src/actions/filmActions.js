@@ -1,3 +1,25 @@
+import {
+  FETCH_FILMS_REQUEST,
+  FETCH_FILMS_SUCCESS,
+  FETCH_FILMS_FAILED,
+  ADD_NEW_FILM_REQUEST,
+  ADD_NEW_FILM_SUCCESS,
+  ADD_NEW_FILM_FAILED,
+  ADD_FILE_SUCCESS,
+  ADD_FILE_FAILED,
+  SHOW_UPLOAD_MODAL,
+  DISPLAY_FILM_BY_ID,
+  HIDE_UPLOAD_MODAL,
+  SEARCH_FILM_SUCCESS,
+  SEARCH_FILM_FAILED,
+  SHOW_DELETE_MODAL,
+  HIDE_DELETE_MODAL,
+  DELETE_FILM_REQUEST,
+  DELETE_FILM_SUCCESS,
+  DELETE_FILM_FAILED,
+  SORT_FILMS
+} from "./actionType";
+
 const apiUrl = "/api/";
 const searchUrl = "search";
 const uploadUrl = "upload";
@@ -22,13 +44,13 @@ export const fetchFilms = () => {
 
 export const fetchFilmsRequest = () => {
   return {
-    type: "FETCH_FILMS_REQUEST"
+    type: FETCH_FILMS_REQUEST
   };
 };
 
 export const fetchFilmsSuccess = (films, message) => {
   return {
-    type: "FETCH_FILMS_SUCCESS",
+    type: FETCH_FILMS_SUCCESS,
     films: films,
     message
   };
@@ -36,7 +58,7 @@ export const fetchFilmsSuccess = (films, message) => {
 
 export const fetchFilmsFailed = error => {
   return {
-    type: "FETCH_FILMS_FAILED",
+    type: FETCH_FILMS_FAILED,
     error
   };
 };
@@ -63,14 +85,14 @@ export const addNewFilm = film => {
 
 export const addNewFilmRequest = film => {
   return {
-    type: "ADD_NEW_FILM_REQUEST",
+    type: ADD_NEW_FILM_REQUEST,
     film
   };
 };
 
 export const addNewFilmRequestSuccess = (film, message) => {
   return {
-    type: "ADD_NEW_FILM_REQUEST_SUCCESS",
+    type: ADD_NEW_FILM_SUCCESS,
     film,
     message
   };
@@ -78,7 +100,7 @@ export const addNewFilmRequestSuccess = (film, message) => {
 
 export const addNewFilmRequestFailed = error => {
   return {
-    type: "ADD_NEW_FILM_REQUEST_FAILED",
+    type: ADD_NEW_FILM_FAILED,
     error
   };
 };
@@ -104,33 +126,33 @@ export const addFile = file => {
 
 export const addFileRequestSuccess = message => {
   return {
-    type: "ADD_FILE_REQUEST_SUCCESS",
+    type: ADD_FILE_SUCCESS,
     message
   };
 };
 
 export const addFileRequestFailed = error => {
   return {
-    type: "ADD_FILE_REQUEST_FAILED",
+    type: ADD_FILE_FAILED,
     error
   };
 };
 
 export const showUploadModal = () => {
   return {
-    type: "SHOW_UPLOAD_MODAL"
+    type: SHOW_UPLOAD_MODAL
   };
 };
 
 export const hideUploadModal = () => {
   return {
-    type: "HIDE_UPLOAD_MODAL"
+    type: HIDE_UPLOAD_MODAL
   };
 };
 
 export const displayFilmById = filmId => {
   return {
-    type: "DISPLAY_FILM_BY_ID",
+    type: DISPLAY_FILM_BY_ID,
     filmId
   };
 };
@@ -156,7 +178,7 @@ export const searchFilm = searchData => {
 
 export const searchFilmRequestSuccess = (film, message) => {
   return {
-    type: "SEARCH_FILM_REQUEST_SUCCESS",
+    type: SEARCH_FILM_SUCCESS,
     film: film,
     message: message
   };
@@ -164,21 +186,21 @@ export const searchFilmRequestSuccess = (film, message) => {
 
 export const searchFilmRequestFailed = error => {
   return {
-    type: "SEARCH_FILM_REQUEST_FAILED",
+    type: SEARCH_FILM_FAILED,
     error
   };
 };
 
 export const showDeleteModal = filmToDelete => {
   return {
-    type: "SHOW_DELETE_MODAL",
+    type: SHOW_DELETE_MODAL,
     film: filmToDelete
   };
 };
 
 export const hideDeleteModal = () => {
   return {
-    type: "HIDE_DELETE_MODAL"
+    type: HIDE_DELETE_MODAL
   };
 };
 
@@ -203,14 +225,14 @@ export const deleteFilm = filmToDelete => {
 
 export const deleteFilmRequest = filmToDelete => {
   return {
-    type: "DELETE_FILM",
+    type: DELETE_FILM_REQUEST,
     filmToDelete
   };
 };
 
 export const deleteFilmSuccess = (filmToDelete, message) => {
   return {
-    type: "DELETE_FILM_SUCCESS",
+    type: DELETE_FILM_SUCCESS,
     filmToDelete: filmToDelete,
     message
   };
@@ -218,14 +240,14 @@ export const deleteFilmSuccess = (filmToDelete, message) => {
 
 export const deleteFilmFailed = error => {
   return {
-    type: "DELETE_FILM_FAILED",
+    type: DELETE_FILM_FAILED,
     error
   };
 };
 
 export const sortFilm = filter => {
   return {
-    type: "SORT_FILMS",
+    type: SORT_FILMS,
     filter
   };
 };
