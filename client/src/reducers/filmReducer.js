@@ -19,13 +19,7 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
       return {
         ...currentState,
         films: [],
-        searchedFilms: [],
-        film: null,
-        isFetching: true,
-        error: null,
-        successMsg: null,
-        showDeleteModal: false,
-        filmToDelete: null
+        isFetching: true
       };
 
     case "FETCH_FILMS_SUCCESS":
@@ -35,49 +29,30 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
         searchedFilms: [],
         film: null,
         isFetching: false,
-        error: null,
-        successMsg: action.message,
-        showDeleteModal: false,
-        filmToDelete: null
+        successMsg: action.message
       };
 
     case "FETCH_FILMS_FAILED":
       return {
         ...currentState,
         films: [],
-        searchedFilms: [],
-        film: null,
         isFetching: false,
-        error: action.error,
-        successMsg: null,
-        showDeleteModal: false,
-        filmToDelete: null
+        error: action.error
       };
 
     case "ADD_NEW_FILM_REQUEST":
       return {
         ...currentState,
-        films: currentState.films,
-        searchedFilms: [],
-        film: null,
         isFetching: true,
-        error: null,
-        successMsg: null,
-        showDeleteModal: false,
-        filmToDelete: null
+        searchedFilms: []
       };
 
     case "ADD_NEW_FILM_REQUEST_SUCCESS":
       const nextState = {
         ...currentState,
         films: [...currentState.films, action.film],
-        searchedFilms: [],
-        film: null,
         isFetching: false,
-        error: null,
-        successMsg: action.message,
-        showDeleteModal: false,
-        filmToDelete: null
+        successMsg: action.message
       };
       return nextState;
 
@@ -85,68 +60,35 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
       return {
         ...currentState,
         films: currentState.films,
-        searchedFilms: [],
-        film: null,
         isFetching: true,
-        error: action.error,
-        successMsg: null,
-        showDeleteModal: false,
-        filmToDelete: null
+        error: action.error
       };
 
     case "ADD_FILE_REQUEST":
       return {
         ...currentState,
-        films: currentState.films,
-        searchedFilms: [],
-        film: null,
         isFetching: true,
-        error: null,
-        successMsg: null,
-        showDeleteModal: false,
-        filmToDelete: null
+        searchedFilms: []
       };
 
     case "ADD_FILE_REQUEST_SUCCESS":
       return {
         ...currentState,
-        films: currentState.films,
-        searchedFilms: [],
-        film: null,
         isFetching: false,
-        error: null,
-        successMsg: null,
-        successUploadMsg: action.message,
-        showDeleteModal: false,
-        filmToDelete: null
+        successUploadMsg: action.message
       };
 
     case "ADD_FILE_REQUEST_FAILED":
       return {
         ...currentState,
-        films: currentState.films,
-        searchedFilms: [],
-        film: null,
         isFetching: true,
-        error: null,
-        errorUpload: action.error,
-        successMsg: null,
-        successUploadMsg: null,
-        showDeleteModal: false,
-        filmToDelete: null
+        errorUpload: action.error
       };
 
     case "SHOW_UPLOAD_MODAL":
       return {
         ...currentState,
-        films: currentState.films,
-        searchedFilms: [],
-        film: null,
-        isFetching: false,
-        successMsg: null,
-        showDeleteModal: false,
-        isShowingUploadModal: true,
-        filmToDelete: null
+        isShowingUploadModal: true
       };
 
     case "HIDE_UPLOAD_MODAL":
@@ -167,14 +109,8 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
     case "SEARCH_FILM_REQUEST":
       return {
         ...currentState,
-        films: currentState.films,
         searchedFilms: [],
-        film: null,
-        isFetching: true,
-        error: null,
-        successMsg: null,
-        showDeleteModal: false,
-        filmToDelete: null
+        isFetching: true
       };
 
     case "SEARCH_FILM_REQUEST_SUCCESS":
@@ -182,32 +118,20 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
         ...currentState,
         searchedFilms: action.film,
         isFetching: false,
-        successMsg: action.message,
-        showDeleteModal: false
+        successMsg: action.message
       };
 
     case "SEARCH_FILM_REQUEST_FAILED":
       return {
         ...currentState,
-        films: currentState.films,
         searchedFilms: [],
-        film: null,
         isFetching: true,
-        error: action.error,
-        successMsg: null,
-        showDeleteModal: false,
-        filmToDelete: null
+        error: action.error
       };
 
     case "DELETE_FILM":
       return {
         ...currentState,
-        films: currentState.films,
-        searchedFilms: [],
-        film: null,
-        isFetching: false,
-        error: null,
-        successMsg: null,
         showDeleteModal: true,
         filmToDelete: action.filmToDelete
       };
@@ -219,12 +143,7 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
       return {
         ...currentState,
         films: filteredFilms,
-        searchedFilms: [],
-        film: null,
-        isFetching: false,
-        error: null,
         successMsg: action.message,
-        showDeleteModal: true,
         filmToDelete: action.filmToDelete
       };
 
@@ -232,20 +151,13 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
       return {
         ...currentState,
         films: currentState.films,
-        searchedFilms: [],
-        film: null,
-        isFetching: false,
         error: action.error,
-        successMsg: null,
-        showDeleteModal: true,
         filmToDelete: action.filmToDelete
       };
 
     case "SHOW_DELETE_MODAL":
       return {
         ...currentState,
-        films: currentState.films,
-        searchedFilms: [],
         film: null,
         isFetching: false,
         successMsg: null,
@@ -256,10 +168,8 @@ export const filmReducer = (currentState = INITIAL_STATE, action) => {
     case "HIDE_DELETE_MODAL":
       return {
         ...currentState,
-        film: null,
         isFetching: false,
         error: action.error,
-        successMsg: null,
         showDeleteModal: false,
         filmToDelete: null
       };
