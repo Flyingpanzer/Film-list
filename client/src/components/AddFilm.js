@@ -3,7 +3,15 @@ import React, { useState } from 'react';
 import './App.css';
 import FilmForm from './FilmForm';
 
-const AddFilm = ({ addNewFilm }) => {
+const AddFilm = ({
+  addNewFilm,
+  showAddModal,
+  hideAddModal,
+  isShowingAddModal,
+  errorAdd,
+  success,
+  successAddMsg,
+}) => {
   const [inputFields, setInputFields] = useState({
     filmTitle: {
       value: '',
@@ -101,7 +109,9 @@ const AddFilm = ({ addNewFilm }) => {
       data.append('filmStars', filmStars.value.trim());
 
       addNewFilm(data);
+      showAddModal();
       resetInputFields();
+      console.log(successAddMsg);
     } else {
       return;
     }
@@ -113,6 +123,12 @@ const AddFilm = ({ addNewFilm }) => {
         addFilm={addFilm}
         inputFields={inputFields}
         setInputFields={setInputFields}
+        showAddModal={showAddModal}
+        hideAddModal={hideAddModal}
+        isShowingAddModal={isShowingAddModal}
+        success={success}
+        errorAdd={errorAdd}
+        successAddMsg={successAddMsg}
       />
     </div>
   );

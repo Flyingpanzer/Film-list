@@ -5,6 +5,8 @@ import {
   ADD_NEW_FILM_REQUEST,
   ADD_NEW_FILM_SUCCESS,
   ADD_NEW_FILM_FAILED,
+  SHOW_ADD_MODAL,
+  HIDE_ADD_MODAL,
   ADD_FILE_SUCCESS,
   ADD_FILE_FAILED,
   SHOW_UPLOAD_MODAL,
@@ -71,11 +73,11 @@ export const addNewFilm = film => {
     }).then(response => {
       if (response.ok) {
         response.json().then(data => {
-          dispatch(addNewFilmRequestSuccess(data.film, data.message));
+          dispatch(addNewFilmSuccess(data.success, data.message, data.film));
         });
       } else {
         response.json().then(error => {
-          dispatch(addNewFilmRequestFailed(error));
+          dispatch(addNewFilmFailed(error));
         });
       }
     });
@@ -89,18 +91,31 @@ export const addNewFilmRequest = film => {
   };
 };
 
-export const addNewFilmRequestSuccess = (film, message) => {
+export const addNewFilmSuccess = (success, message, film = []) => {
   return {
     type: ADD_NEW_FILM_SUCCESS,
-    film,
+    success,
     message,
+    film,
   };
 };
 
-export const addNewFilmRequestFailed = error => {
+export const addNewFilmFailed = error => {
   return {
     type: ADD_NEW_FILM_FAILED,
     error,
+  };
+};
+
+export const showAddModal = () => {
+  return {
+    type: SHOW_ADD_MODAL,
+  };
+};
+
+export const hideAddModal = () => {
+  return {
+    type: HIDE_ADD_MODAL,
   };
 };
 

@@ -1,7 +1,23 @@
-import React, { useState } from 'react';
-import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import React from 'react';
+import {
+  FormGroup,
+  ControlLabel,
+  FormControl,
+  Alert,
+  Modal,
+  Button,
+} from 'react-bootstrap';
 
-const FilmForm = ({ addFilm, inputFields, setInputFields }) => {
+const FilmForm = ({
+  addFilm,
+  inputFields,
+  setInputFields,
+  isShowingAddModal,
+  hideAddModal,
+  errorAdd,
+  success,
+  successAddMsg,
+}) => {
   const onChange = e => {
     e.preventDefault();
 
@@ -104,6 +120,27 @@ const FilmForm = ({ addFilm, inputFields, setInputFields }) => {
             Submit
           </Button>
         </FormGroup>
+
+        <Modal show={isShowingAddModal} onHide={hideAddModal}>
+          <Modal.Header>
+            <Modal.Title>File uploaded</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {!success && (
+              <Alert bsStyle="warning">
+                Failed. <strong>{successAddMsg} </strong>
+              </Alert>
+            )}
+            {success && (
+              <Alert bsStyle="success">
+                <strong>{successAddMsg} </strong>
+              </Alert>
+            )}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={hideAddModal}>Close</Button>
+          </Modal.Footer>
+        </Modal>
       </form>
     </div>
   );

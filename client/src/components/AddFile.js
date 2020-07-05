@@ -65,7 +65,7 @@ const AddFile = ({
           )}
         </Modal.Body>
         <Modal.Footer>
-          {successUploadMsg && <Button onClick={hideUploadModal}>Close</Button>}
+          <Button onClick={hideUploadModal}>Close</Button>
         </Modal.Footer>
       </Modal>
     </div>
