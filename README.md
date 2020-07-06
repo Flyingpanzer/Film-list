@@ -1,4 +1,4 @@
-# Test task "Film list application"
+# "Film list application"
 
 SPA with REST API for representing film list
 
